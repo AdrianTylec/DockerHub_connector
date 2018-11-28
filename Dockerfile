@@ -2,7 +2,7 @@
 FROM ubuntu
 
 #Autor
-LABEL maintainer-"Tylec adrian.tylec@pollub.edu.pl"
+LABEL maintainer="Tylec adrian.tylec@pollub.edu.pl"
 
 #Aktualizacja
 RUN apt-get update
