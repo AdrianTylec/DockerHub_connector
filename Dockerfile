@@ -1,14 +1,14 @@
 #wybor obrazu
-FROM ubuntu
+FROM java
+
+RUN apt-get update
+COPY Main.java /usr/src/myapp
+WORKDIR /usr/src/myapp
+RUN javac Main.java
+CMD ["java", "Main"]
 
 #Autor
 LABEL maintainer="Tylec adrian.tylec@pollub.edu.pl"
-
-#Aktualizacja
-RUN apt-get update
-
-#instalacja apache
-RUN apt-get install -y apache2
 
 #nasluchiwanie
 EXPOSE 80
