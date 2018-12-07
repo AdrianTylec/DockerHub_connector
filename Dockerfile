@@ -1,11 +1,14 @@
 #wybor obrazu
 FROM java
-
+#aktualizacje
 RUN apt-get update
-COPY Main.java /usr/src/myapp
-WORKDIR /usr/src/myapp
-RUN javac Main.java
-CMD ["java", "Main"]
+
+#skopiowanie pliku w javie
+COPY . /
+WORKDIR /
+#kompilacja pliku
+RUN javac DockerConnectMySQL.java
+CMD ["java", "-classpath", "mysql-connector-java-8.0.13.jar:.","DockerConnectMySQL"]
 
 #Autor
 LABEL maintainer="Tylec adrian.tylec@pollub.edu.pl"
